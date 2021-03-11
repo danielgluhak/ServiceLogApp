@@ -5,6 +5,7 @@
  */
 package com.danielgluhak.servicelogapp;
 
+import com.danielgluhak.cotroller.ControllerCustomer;
 import com.danielgluhak.model.Customer;
 import com.danielgluhak.model.Items;
 import com.danielgluhak.model.Reciept;
@@ -20,6 +21,7 @@ public class Main {
     
     public static void main(String[] args) {
         InitFixtures.start();
+        
         
         
     }

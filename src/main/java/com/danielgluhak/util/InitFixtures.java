@@ -6,9 +6,13 @@
 package com.danielgluhak.util;
 
 
+import com.danielgluhak.cotroller.ControllerCustomer;
+import com.danielgluhak.model.Customer;
 import com.github.javafaker.Faker;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.hibernate.Session;
 import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
 
@@ -19,27 +23,30 @@ import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
 public class InitFixtures {
     
     public static void start() {
-        Session s = HibernateUtil.getSession();
-        s.beginTransaction();
+        Session sess = HibernateUtil.getSession();
+        sess.beginTransaction();
+        
+        
+        Customer c2 = new Customer();
+        
+        c2.setName("Lalalla");
+        c2.setLastName("G");
+        c2.setContact("0");
+      
+        sess.save(c2);
+       
+
         
 //       instances
          Faker faker = new Faker();
          List<Item> items = new ArrayList<>();
-//         
-  
+//          
       
         
-        s.getTransaction().commit();
+        sess.getTransaction().commit();
+        
+        
         
     }
     
-//    Scanner scan = new Scanner(System.in);
-//    public void addCustomer() {
-//        System.out.println("First name:");
-//        c.setName(scan.next());
-//        System.out.println("Last name:");
-//        c.setLastName(scan.next());
-//        System.out.println("Phone number:");
-//        c.setContact(scan.next());
-//    }
 }
