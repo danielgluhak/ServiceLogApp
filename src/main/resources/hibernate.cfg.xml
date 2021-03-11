@@ -3,8 +3,7 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
         
         <!-- 
-        Potrebno je ručno kreirati bazu
-        create database edunovajp23_hib default character set utf8;
+        create database servicelog_hib default character set utf8;
 -->
 <hibernate-configuration>
     <session-factory>
@@ -30,7 +29,6 @@
         create-drop: drop the schema when the SessionFactory is closed explicitly, typically when the application is stopped.
         none: does nothing with the schema, makes no changes to the database
         
-        1. puta create-drop, poslije update
         
         -->
         <property name="hbm2ddl.auto">create-drop</property>
@@ -41,9 +39,6 @@
         <property name="hibernate.dbcp.minIdle">5</property>
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
 
-
-        <!-- Ovdje navodimo mapirane klase -->
-        
         <mapping class="com.danielgluhak.model.Customer"/> 
         <mapping class="com.danielgluhak.model.Vehicle"/> 
         <mapping class="com.danielgluhak.model.ServiceOrder"/> 
