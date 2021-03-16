@@ -7,14 +7,9 @@ package com.danielgluhak.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 
 /**
@@ -25,7 +20,7 @@ import javax.persistence.OneToOne;
 public class ServiceOrder extends EntityDefault{
     
     @OneToMany
-    private List<Vehicle> vehicle;
+    private List<Vehicle> vehicle = new ArrayList<>();
     private LocalDate recievingDate;
     private String detectedFailures;
 

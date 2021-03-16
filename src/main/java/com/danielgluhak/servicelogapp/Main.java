@@ -5,12 +5,6 @@
  */
 package com.danielgluhak.servicelogapp;
 
-import com.danielgluhak.cotroller.ControllerCustomer;
-import com.danielgluhak.model.Customer;
-import com.danielgluhak.model.Items;
-import com.danielgluhak.model.Reciept;
-import com.danielgluhak.model.ServiceOrder;
-import com.danielgluhak.model.Vehicle;
 import com.danielgluhak.util.InitFixtures;
 
 /**

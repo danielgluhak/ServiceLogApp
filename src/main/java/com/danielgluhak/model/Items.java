@@ -14,6 +14,7 @@ public class Items extends EntityDefault {
     
     private String name;
     private float price;
+   
 
     public String getName() {
         return name;

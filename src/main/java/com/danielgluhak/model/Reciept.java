@@ -1,15 +1,13 @@
 
 package com.danielgluhak.model;
 
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 
 /**
@@ -20,7 +18,7 @@ import javax.persistence.OneToMany;
 public class Reciept extends EntityDefault {
     
     private LocalDateTime issueDate;
-    @ManyToOne
+    @OneToOne
     private ServiceOrder sOrder;
     @ManyToMany
     private List<Items> items;
@@ -41,16 +39,6 @@ public class Reciept extends EntityDefault {
     public void setItems(List<Items> items) {
         this.items = items;
     }
-
-    
-    
-//    public ServiceOrder getSo() {
-//        return so;
-//    }
-//
-//    public void setSo(ServiceOrder so) {
-//        this.so = so;
-//    }
 
     public LocalDateTime getIssueDate() {
         return issueDate;

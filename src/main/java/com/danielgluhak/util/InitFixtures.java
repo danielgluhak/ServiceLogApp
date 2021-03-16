@@ -6,15 +6,11 @@
 package com.danielgluhak.util;
 
 
-import com.danielgluhak.cotroller.ControllerCustomer;
+import com.danielgluhak.controller.ControllerCustomer;
 import com.danielgluhak.model.Customer;
-import com.github.javafaker.Faker;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.danielgluhak.model.Vehicle;
 import org.hibernate.Session;
-import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
+
 
 /**
  *
@@ -26,25 +22,27 @@ public class InitFixtures {
         Session sess = HibernateUtil.getSession();
         sess.beginTransaction();
         
-        
-        Customer c2 = new Customer();
-        
-        c2.setName("Lalalla");
-        c2.setLastName("G");
-        c2.setContact("0");
       
-        sess.save(c2);
+        Customer c5 = new Customer();
+        
+        c5.setName("Customer1");
+        c5.setLastName("CustomerLastName");
+        c5.setContact("09988995965");
+        sess.save(c5);
+        
+        Vehicle v1 = new Vehicle();
+        v1.setCustomer(c5);
+        v1.setManufacturer("Audi");
+        v1.setModel("");
+        v1.setProductionYear(1950);
+        sess.save(v1);
+        
+        
        
-
-        
-//       instances
-         Faker faker = new Faker();
-         List<Item> items = new ArrayList<>();
-//          
-      
+       
         
         sess.getTransaction().commit();
-        
+         sess.close();
         
         
     }
