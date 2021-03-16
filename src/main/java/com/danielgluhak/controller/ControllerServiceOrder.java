@@ -21,9 +21,6 @@ public class ControllerServiceOrder extends Controller<ServiceOrder> {
     public ControllerServiceOrder(ServiceOrder so) {
         super(so);
     }
-
-    
-    
     
     @Override
     public List<ServiceOrder> getData() {
