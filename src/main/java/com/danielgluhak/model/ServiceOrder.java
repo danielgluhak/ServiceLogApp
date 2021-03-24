@@ -7,6 +7,7 @@ package com.danielgluhak.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -21,7 +22,7 @@ public class ServiceOrder extends EntityDefault{
     
     @OneToMany
     private List<Vehicle> vehicle = new ArrayList<>();
-    private LocalDate recievingDate;
+    private Date recievingDate;
     private String detectedFailures;
 
     
@@ -33,11 +34,11 @@ public class ServiceOrder extends EntityDefault{
         this.vehicle = vehicle;
     }
 
-    public LocalDate getRecievingDate() {
+    public Date getRecievingDate() {
         return recievingDate;
     }
 
-    public void setRecievingDate(LocalDate recievingDate) {
+    public void setRecievingDate(Date recievingDate) {
         this.recievingDate = recievingDate;
     }
     public String getDetectedFailures() {

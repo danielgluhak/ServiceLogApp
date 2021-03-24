@@ -26,20 +26,29 @@ public class ControllerServiceOrder extends Controller<ServiceOrder> {
     public List<ServiceOrder> getData() {
         return session.createQuery("from ServiceOrder").list();
     }
+    
+    private void detectedFailuresSet() throws ExceptionServiceLog {
+        if(EntityDefault.getDetectedFailures()== null || 
+           EntityDefault.getDetectedFailures().isBlank() || 
+           EntityDefault.getDetectedFailures().isEmpty()) {
+            throw new ExceptionServiceLog("You must enter all detected vehicle failures.");
+        }
+    }
+    
 
     @Override
     protected void controlCreate() throws ExceptionServiceLog {
-        throw new UnsupportedOperationException("Not supported yet"); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     protected void controlUpdate() throws ExceptionServiceLog {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     protected void controlDelete() throws ExceptionServiceLog {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
     
