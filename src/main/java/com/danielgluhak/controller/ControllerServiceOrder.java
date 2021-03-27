@@ -27,14 +27,6 @@ public class ControllerServiceOrder extends Controller<ServiceOrder> {
         return session.createQuery("from ServiceOrder").list();
     }
     
-    private void detectedFailuresSet() throws ExceptionServiceLog {
-        if(EntityDefault.getDetectedFailures()== null || 
-           EntityDefault.getDetectedFailures().isBlank() || 
-           EntityDefault.getDetectedFailures().isEmpty()) {
-            throw new ExceptionServiceLog("You must enter all detected vehicle failures.");
-        }
-    }
-    
 
     @Override
     protected void controlCreate() throws ExceptionServiceLog {

@@ -24,23 +24,23 @@ public class ControllerAS<T extends ArticlesAndServices> extends Controller<T> {
         if(EntityDefault.getProductName().isBlank() || 
             EntityDefault.getProductName().isEmpty() || 
             EntityDefault.getPrice()==null) {
-            throw new ExceptionServiceLog("Product/service name and price must be set.");
+            throw new ExceptionServiceLog("No products or services were selected.");
         }
     }
     
     @Override
     protected void controlCreate() throws ExceptionServiceLog {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     protected void controlUpdate() throws ExceptionServiceLog {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     protected void controlDelete() throws ExceptionServiceLog {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
     
