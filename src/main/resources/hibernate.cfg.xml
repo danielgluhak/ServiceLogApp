@@ -31,7 +31,7 @@
         
         
         -->
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create-drop</property>
         <!-- dbcp connection pool configuration -->
         <property name="hibernate.dbcp.initialSize">5</property>
         <property name="hibernate.dbcp.maxTotal">20</property>
@@ -41,12 +41,11 @@
 
         <mapping class="com.danielgluhak.model.Customer"/> 
         <mapping class="com.danielgluhak.model.Vehicle"/> 
-        <mapping class="com.danielgluhak.model.ServiceOrder"/> 
         <mapping class="com.danielgluhak.model.Articles"/> 
         <mapping class="com.danielgluhak.model.Services"/> 
-        <mapping class="com.danielgluhak.model.ArticlesAndServices"/> 
+        <mapping class="com.danielgluhak.model.ServiceOrder"/> 
         
-        <mapping class="com.danielgluhak.model.Reciept"/> 
+     
         
     </session-factory>
 </hibernate-configuration>
