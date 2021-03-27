@@ -5,11 +5,12 @@
  */
 package com.danielgluhak.model;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 
@@ -20,18 +21,37 @@ import javax.persistence.OneToMany;
 @Entity
 public class ServiceOrder extends EntityDefault{
     
-    @OneToMany
+    @ManyToOne
     private List<Vehicle> vehicle = new ArrayList<>();
+    @ManyToMany
+    private List<Articles> articles = new ArrayList<>();
+    @ManyToMany
+    private List<Services> services = new ArrayList<>();
     private Date recievingDate;
-    private String detectedFailures;
+    private String remarks;
 
-    
     public List<Vehicle> getVehicle() {
         return vehicle;
     }
 
     public void setVehicle(List<Vehicle> vehicle) {
         this.vehicle = vehicle;
+    }
+
+    public List<Articles> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Articles> articles) {
+        this.articles = articles;
+    }
+
+    public List<Services> getServices() {
+        return services;
+    }
+
+    public void setServices(List<Services> services) {
+        this.services = services;
     }
 
     public Date getRecievingDate() {
@@ -41,14 +61,18 @@ public class ServiceOrder extends EntityDefault{
     public void setRecievingDate(Date recievingDate) {
         this.recievingDate = recievingDate;
     }
-    public String getDetectedFailures() {
-        return detectedFailures;
+
+    public String getRemarks() {
+        return remarks;
     }
 
-    public void setDetectedFailures(String detectedFailures) {
-        this.detectedFailures = detectedFailures;
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
     }
+    
+    
+    
 
-
-   
+    
+    
 }
