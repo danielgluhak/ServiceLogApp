@@ -19,8 +19,10 @@ public class Operator {
     
     
     public String getUserName() {
-        return firstName.toLowerCase().trim().substring(0, 1) + 
-               lastName.toLowerCase().trim();
+        return userName;
+    }
+    public void setUserName() {
+        this.userName = userName;
     }
     
     public String getFirstName() {
@@ -45,6 +47,10 @@ public class Operator {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setUserName(String substring) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
