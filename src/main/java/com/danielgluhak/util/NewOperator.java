@@ -19,7 +19,12 @@ public class NewOperator {
         Operator o1 = new Operator();
         o1.setFirstName("Daniel");
         o1.setLastName("Gluhak");
-        o1.setPassword(BCrypt.hashpw("defaultPass012", BCrypt.gensalt()));
+        o1.setPassword(BCrypt.hashpw("default012", BCrypt.gensalt()));
+//        o1.setUserName(o1.getFirstName().substring(0, 1).trim().toLowerCase()
+//                        + o1.getLastName().trim().toLowerCase());
+        o1.setUserName("dgluhak");
+        
+       
         
         ControllerOperator co = new ControllerOperator();
         co.setEntityDefault(o1);
@@ -29,7 +34,9 @@ public class NewOperator {
         } catch (ExceptionServiceLog e) {
             System.out.println(e.getMessage());
         }
+        
     }
+       
     
     
     
