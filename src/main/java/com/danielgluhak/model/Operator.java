@@ -11,10 +11,18 @@ package com.danielgluhak.model;
  */
 public class Operator {
  
+    private String userName;
     private String firstName;
     private String lastName;
     private String password;
-
+    
+    
+    
+    public String getUserName() {
+        return firstName.toLowerCase().trim().substring(0, 1) + 
+               lastName.toLowerCase().trim();
+    }
+    
     public String getFirstName() {
         return firstName;
     }
@@ -38,6 +46,7 @@ public class Operator {
     public void setPassword(String password) {
         this.password = password;
     }
+    
     
     
 }
