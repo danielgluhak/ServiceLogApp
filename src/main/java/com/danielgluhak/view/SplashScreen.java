@@ -1,11 +1,17 @@
 
 package com.danielgluhak.view;
 
+import com.danielgluhak.util.HibernateUtil;
+import javax.swing.JOptionPane;
+import org.hibernate.Session;
+
 public class SplashScreen extends javax.swing.JFrame {
 
     public SplashScreen() {
         initComponents();
-         
+        new Loader().start();
+        
+   
         
     }
     public void startSplashScreen() {
@@ -19,6 +25,20 @@ public class SplashScreen extends javax.swing.JFrame {
                     }
                 }
             }catch(Exception e){
+        }
+    }
+    
+     private class Loader extends Thread {
+        
+         @Override
+         public void run() {
+            Session s = HibernateUtil.getSession();
+            if (s.getMetamodel().getEntities().size() > 0) {
+                new Authorization().setVisible(true);
+                dispose();
+            }else{
+                JOptionPane.showMessageDialog(rootPane,"Database error.");
+            }
         }
     }
     

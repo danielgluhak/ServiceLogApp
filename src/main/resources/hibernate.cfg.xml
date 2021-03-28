@@ -39,6 +39,7 @@
         <property name="hibernate.dbcp.minIdle">5</property>
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
 
+        <mapping class="com.danielgluhak.model.Operator"/>
         <mapping class="com.danielgluhak.model.Customer"/> 
         <mapping class="com.danielgluhak.model.Vehicle"/> 
         <mapping class="com.danielgluhak.model.Articles"/> 
