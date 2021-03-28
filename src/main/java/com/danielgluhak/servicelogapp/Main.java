@@ -6,6 +6,7 @@
 package com.danielgluhak.servicelogapp;
 
 import com.danielgluhak.util.InitFixtures;
+import com.danielgluhak.view.SplashScreen;
 
 /**
  *
@@ -14,10 +15,13 @@ import com.danielgluhak.util.InitFixtures;
 public class Main {
     
     public static void main(String[] args) {
-        InitFixtures.start();
-        
+//        InitFixtures.start();
+       SplashScreen sc = new SplashScreen();
+       sc.setVisible(true);
+       sc.startSplashScreen();
         
         
     }
+    
     
 }
