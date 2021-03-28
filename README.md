@@ -1,9 +1,10 @@
 # ServiceLogApp
 
-Aplikacija služi za monitoring ulaza vozila i njihovih vlasnika, izvršenih popravaka i ispostavljanje računa na temelju radnog naloga.
+Aplikacija namijenjena automehaničarskim servisima.
+Aplikacija služi za monitoring ulaza vozila i njihovih vlasnika te unos robe i usluga za svako pojedino vozilo.
 Planirane mogućnosti:
-  - unos stranaka
-  - unos vozila
+  - unos, brisanje i ažuriranje podataka stranaka
+  - unos, brisanje i ažuriranje podataka vozila
   - unos robe i usluga te dodavanje istih na radni nalog vezan uz vozilo
-  - ispostavljanje računa sa trenutnim datumom i podacima vezanima za radnog naloga
-  - create, read, update i delete svih podataka
+  - ažuriranje radnog naloga pri završetku servisa vozila
+
