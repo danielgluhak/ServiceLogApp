@@ -25,15 +25,14 @@ import org.mindrot.jbcrypt.BCrypt;
  */
 public class ControllerOperator extends Controller<Operator>{
     
-    public Operator authorize(String firstName, String lastName, char[] password) {
+    public Operator authorize(String userName, char[] password) {
         
         Operator o = (Operator) session
-                .createQuery("from Operator o where o.firstName=:firstName and o.lastName=:lastName")
-                .setParameter("firstname", firstName)
-                .setParameter("lastName", lastName)
-                .getSingleResult();
+                .createQuery("from Operator o1 where o1.userName=:userName")
+                .setParameter("userName", userName)
+                .getSingleResult(); 
         if(o == null) {
-            JOptionPane.showMessageDialog(null, "Username and password does not match.");
+            JOptionPane.showMessageDialog(null, "Username does not exist.");
             return null; 
         } else {
             return BCrypt.checkpw(new String(password),o.getPassword()) ? o : null;
@@ -47,16 +46,16 @@ public class ControllerOperator extends Controller<Operator>{
 
     @Override
     protected void controlCreate() throws ExceptionServiceLog {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     protected void controlUpdate() throws ExceptionServiceLog {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     protected void controlDelete() throws ExceptionServiceLog {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 }
