@@ -21,7 +21,7 @@ import javax.persistence.OneToMany;
 @Entity
 public class ServiceOrder extends EntityDefault{
     
-    @ManyToOne
+    @ManyToMany
     private List<Vehicle> vehicle = new ArrayList<>();
     @ManyToMany
     private List<Articles> articles = new ArrayList<>();
