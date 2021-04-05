@@ -6,6 +6,7 @@
 package com.danielgluhak.servicelogapp;
 
 import com.danielgluhak.util.InitFixtures;
+import com.danielgluhak.util.NewOperator;
 import com.danielgluhak.view.SplashScreen;
 
 /**
@@ -19,7 +20,7 @@ public class Main {
        SplashScreen sc = new SplashScreen();
        sc.setVisible(true);
        sc.startSplashScreen();
-        
+       new NewOperator();
         
     }
     

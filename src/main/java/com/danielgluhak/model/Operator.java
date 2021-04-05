@@ -5,26 +5,28 @@
  */
 package com.danielgluhak.model;
 
+import javax.persistence.Entity;
+
 /**
  *
  * @author Daniel
  */
-public class Operator {
+@Entity
+public class Operator extends EntityDefault{
  
     private String userName;
     private String firstName;
     private String lastName;
     private String password;
-    
-    
-    
+
     public String getUserName() {
         return userName;
     }
-    public void setUserName() {
+
+    public void setUserName(String userName) {
         this.userName = userName;
     }
-    
+
     public String getFirstName() {
         return firstName;
     }
@@ -49,10 +51,9 @@ public class Operator {
         this.password = password;
     }
 
-    public void setUserName(String substring) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
     
+   
     
     
 }

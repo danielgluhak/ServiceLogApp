@@ -34,7 +34,7 @@ public abstract class Controller<T> {
     protected abstract void controlDelete() throws ExceptionServiceLog;
 
     // Java beans validator implementation 40,50
-    Set<ConstraintViolation<T>> constraintViolations = validator.validate(EntityDefault);
+//    Set<ConstraintViolation<T>> constraintViolations = validator.validate(EntityDefault);
     
     
     
@@ -46,11 +46,11 @@ public abstract class Controller<T> {
     
     public Controller(T entityDefault) {
         this();
-        this.EntityDefault=EntityDefault;
+        this.EntityDefault=entityDefault;
     }
     
     public T create() throws ExceptionServiceLog {
-        control();
+//        control();
         controlCreate();
         save();
         return this.EntityDefault;
