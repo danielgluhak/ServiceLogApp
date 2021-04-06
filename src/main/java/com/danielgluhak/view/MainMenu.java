@@ -39,7 +39,7 @@ public class MainMenu extends javax.swing.JFrame {
         lblTime = new javax.swing.JLabel();
         btnHelp = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         btnServiceLogs.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnServiceLogs.setText("Service logs");
@@ -51,6 +51,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         btnArticlesServices.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnArticlesServices.setText("Articles and services");
+        btnArticlesServices.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnArticlesServicesMouseReleased(evt);
+            }
+        });
 
         btnVehicles.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         btnVehicles.setText("Vehicles");
@@ -108,6 +113,10 @@ public class MainMenu extends javax.swing.JFrame {
     private void btnServiceLogsMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnServiceLogsMouseReleased
         new ServiceLogsForm().setVisible(true);
     }//GEN-LAST:event_btnServiceLogsMouseReleased
+
+    private void btnArticlesServicesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnArticlesServicesMouseReleased
+        new ArticlesForm().setVisible(true);
+    }//GEN-LAST:event_btnArticlesServicesMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
