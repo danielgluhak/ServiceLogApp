@@ -15,6 +15,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public abstract class ArticlesAndServices extends EntityDefault {
     
+    private String articleCode;
     private String productName;
     private BigDecimal price;
 
@@ -22,11 +23,18 @@ public abstract class ArticlesAndServices extends EntityDefault {
     }
 
     public ArticlesAndServices(String productName, BigDecimal price) {
+        this.articleCode = articleCode;
         this.productName = productName;
         this.price = price;
     }
 
-    
+    public String getArticleCode() {
+        return articleCode;
+    }
+
+    public void setArticleCode(String articleCode) {
+        this.articleCode = articleCode;
+    }
     
     public String getProductName() {
         return productName;
