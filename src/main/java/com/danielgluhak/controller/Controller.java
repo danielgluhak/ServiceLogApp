@@ -57,6 +57,9 @@ public abstract class Controller<T> {
     }
     public T update() throws ExceptionServiceLog {
         control();
+        session.beginTransaction();
+        session.update(this.EntityDefault);
+        session.getTransaction().commit();
         controlUpdate();
         save();
         return this.EntityDefault;
