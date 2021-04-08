@@ -6,11 +6,14 @@ C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\util\InitFixt
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\model\Customer.java
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\model\Articles.java
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\model\ArticlesAndServices.java
+C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\controller\ControllerServices.java
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\view\Authorization.java
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\util\ExceptionServiceLog.java
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\controller\ControllerServiceOrder.java
+C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\view\HelpForm.java
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\controller\ControllerOperator.java
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\model\Services.java
+C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\view\SplshScreen.java
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\view\SplashScreen.java
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\model\Operator.java
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\view\MainMenu.java
@@ -21,6 +24,5 @@ C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\model\EntityD
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\controller\ControllerArticles.java
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\controller\Controller.java
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\controller\ControllerCustomer.java
-C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\controller\ControllerAS.java
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\controller\ControllerVehicle.java
 C:\NetBeans-workspace\ServiceLogApp\src\main\java\com\danielgluhak\util\HibernateUtil.java

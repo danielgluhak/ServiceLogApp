@@ -10,16 +10,13 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Articles extends ArticlesAndServices {
-
-    public Articles() {
-    }
-
-    public Articles(String productName, BigDecimal price) {
-        super(productName, price);
+    
+    
+    
     }
 
     
     
     
     
-}
+

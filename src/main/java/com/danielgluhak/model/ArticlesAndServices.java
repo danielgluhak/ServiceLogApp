@@ -51,6 +51,12 @@ public abstract class ArticlesAndServices extends EntityDefault {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
+   
+    @Override
+    public String toString() {
+//          return String.format("%15f"+getArticleCode()+getProductName()+getPrice());
+        return String.format("%-25s %25s %25s",getArticleCode().trim().toLowerCase(), getProductName(), getPrice());
+    }
     
     
    

@@ -3,10 +3,13 @@ package com.danielgluhak.view;
 
 import com.danielgluhak.controller.ControllerArticles;
 import com.danielgluhak.model.Articles;
+import com.danielgluhak.model.Operator;
 import com.danielgluhak.util.ExceptionServiceLog;
+import com.danielgluhak.util.NewOperator;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
@@ -17,6 +20,7 @@ public class ArticlesForm extends javax.swing.JFrame {
     public ArticlesForm() {
         initComponents();
         conArt = new ControllerArticles();
+        load();
         setTitle(Application.APP_NAME);
         new ArticlesForm.Time().start();
     }
@@ -47,6 +51,21 @@ public class ArticlesForm extends javax.swing.JFrame {
         btnSearch = new javax.swing.JButton();
         txtArtPrice = new javax.swing.JTextField();
         jServicesPanel = new javax.swing.JPanel();
+        jArticlesPane1 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lstServices = new javax.swing.JList<>();
+        jLabel4 = new javax.swing.JLabel();
+        txtSerName = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        btnSerAdd = new javax.swing.JButton();
+        btnSerEdit = new javax.swing.JButton();
+        btnSerDelete = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        txtSerCode = new javax.swing.JTextField();
+        txtSerSearch = new javax.swing.JTextField();
+        btnSerSearch = new javax.swing.JButton();
+        txtSerPrice = new javax.swing.JTextField();
+        operatorName = new javax.swing.JLabel();
 
         jInternalFrame1.setVisible(true);
 
@@ -61,10 +80,9 @@ public class ArticlesForm extends javax.swing.JFrame {
             .addGap(0, 4, Short.MAX_VALUE)
         );
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\NetBeans-workspace\\ServiceLogApp\\src\\main\\resources\\Webp.net-resizeimage (1).jpg")); // NOI18N
         jLabel5.setText("jLabel5");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(lblTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 460, 170, 30));
 
@@ -128,6 +146,11 @@ public class ArticlesForm extends javax.swing.JFrame {
         });
 
         txtSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSearchActionPerformed(evt);
+            }
+        });
 
         btnSearch.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnSearch.setText("Search");
@@ -201,20 +224,160 @@ public class ArticlesForm extends javax.swing.JFrame {
 
         jTabbedPane.addTab("Articles", jArticlesPane);
 
+        lstServices.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                lstServicesValueChanged(evt);
+            }
+        });
+        jScrollPane2.setViewportView(lstServices);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setText("Service name:");
+
+        txtSerName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSerNameActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setText("Service price: ");
+
+        btnSerAdd.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSerAdd.setText("Add");
+        btnSerAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSerAddActionPerformed(evt);
+            }
+        });
+
+        btnSerEdit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSerEdit.setText("Edit");
+        btnSerEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSerEditActionPerformed(evt);
+            }
+        });
+
+        btnSerDelete.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSerDelete.setText("Delete");
+        btnSerDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSerDeleteActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel8.setText("Service code:");
+
+        txtSerCode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSerCodeActionPerformed(evt);
+            }
+        });
+
+        txtSerSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtSerSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSerSearchActionPerformed(evt);
+            }
+        });
+
+        btnSerSearch.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSerSearch.setText("Search");
+        btnSerSearch.setPreferredSize(new java.awt.Dimension(55, 23));
+        btnSerSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSerSearchActionPerformed(evt);
+            }
+        });
+
+        txtSerPrice.setText("1234,55");
+
+        javax.swing.GroupLayout jArticlesPane1Layout = new javax.swing.GroupLayout(jArticlesPane1);
+        jArticlesPane1.setLayout(jArticlesPane1Layout);
+        jArticlesPane1Layout.setHorizontalGroup(
+            jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jArticlesPane1Layout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jArticlesPane1Layout.createSequentialGroup()
+                        .addComponent(txtSerSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSerSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jArticlesPane1Layout.createSequentialGroup()
+                            .addComponent(btnSerEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(btnSerDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jArticlesPane1Layout.createSequentialGroup()
+                        .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtSerName, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(btnSerAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtSerCode, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addGap(18, 18, 18)
+                        .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(txtSerPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(81, Short.MAX_VALUE))
+        );
+        jArticlesPane1Layout.setVerticalGroup(
+            jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jArticlesPane1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtSerSearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSerSearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSerPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSerCode, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSerName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSerAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSerEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSerDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14))
+        );
+
         javax.swing.GroupLayout jServicesPanelLayout = new javax.swing.GroupLayout(jServicesPanel);
         jServicesPanel.setLayout(jServicesPanelLayout);
         jServicesPanelLayout.setHorizontalGroup(
             jServicesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 785, Short.MAX_VALUE)
+            .addGroup(jServicesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jServicesPanelLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jArticlesPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jServicesPanelLayout.setVerticalGroup(
             jServicesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGap(0, 433, Short.MAX_VALUE)
+            .addGroup(jServicesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jServicesPanelLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jArticlesPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jTabbedPane.addTab("Services", jServicesPanel);
 
         getContentPane().add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 460));
+        getContentPane().add(operatorName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 160, 30));
 
         pack();
         setLocationRelativeTo(null);
@@ -226,8 +389,17 @@ public class ArticlesForm extends javax.swing.JFrame {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         DefaultListModel<Articles> art = new DefaultListModel<>();
-        art.addAll(conArt.getData(txtSearch.getText()));
-        lstArticles.setModel(art);
+        if(!txtSearch.getText().isBlank() || !txtSearch.getText().isEmpty()) {
+          art.addAll(conArt.getData(txtSearch.getText()));
+            lstArticles.setModel(art);  
+            cleanUp();
+            
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "At least one character must be entered to perform search.");
+            load();
+        }
+//        art.addAll(conArt.getData(txtSearch.getText()));
+//        lstArticles.setModel(art);
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void txtArtCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtArtCodeActionPerformed
@@ -251,8 +423,16 @@ public class ArticlesForm extends javax.swing.JFrame {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
 
         conArt.setEntityDefault(new Articles());
-        setValuesToEntity();
-
+//        setValuesToEntity();
+        if(txtArtName.getText().isEmpty() || txtArtName.getText().isBlank()) {
+            JOptionPane.showMessageDialog(rootPane, "Please enter article name.");
+            return;
+        } else if(txtArtCode.getText().isEmpty() || txtArtCode.getText().isBlank()) {
+            JOptionPane.showMessageDialog(rootPane, "Please enter article code.");
+        } else {
+            setValuesToEntity();
+        }
+        
         try {
             conArt.create();
             cleanUp();
@@ -273,6 +453,7 @@ public class ArticlesForm extends javax.swing.JFrame {
         if(lstArticles.getSelectedValue() == null) {
             return;
         }
+        
         conArt.setEntityDefault(lstArticles.getSelectedValue());
 
         txtArtCode.setText(conArt.getEntityDefault().getArticleCode().toString());
@@ -285,11 +466,13 @@ public class ArticlesForm extends javax.swing.JFrame {
     }//GEN-LAST:event_lstArticlesValueChanged
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        if(conArt.getEntityDefault()==null || conArt.getEntityDefault().getId()==null) {
+        if(conArt.getEntityDefault()==null || 
+                conArt.getEntityDefault().getId()==null) {
             JOptionPane.showMessageDialog(rootPane, "Please choose the article to edit.");
             return;
+        } else {
+            setValuesToEntity();
         }
-        setValuesToEntity();
         try {
             conArt.update();
             cleanUp();
@@ -297,13 +480,53 @@ public class ArticlesForm extends javax.swing.JFrame {
         } catch (ExceptionServiceLog e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());
         }
+        
     }//GEN-LAST:event_btnEditActionPerformed
+
+    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
+        if(txtSearch.getText().isEmpty() || txtSearch.getText().isBlank()) {
+            cleanUp();
+            load();
+        } 
+    }//GEN-LAST:event_txtSearchActionPerformed
+
+    private void lstServicesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstServicesValueChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lstServicesValueChanged
+
+    private void txtSerNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSerNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSerNameActionPerformed
+
+    private void btnSerAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSerAddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSerAddActionPerformed
+
+    private void btnSerEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSerEditActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSerEditActionPerformed
+
+    private void btnSerDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSerDeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSerDeleteActionPerformed
+
+    private void txtSerCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSerCodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSerCodeActionPerformed
+
+    private void txtSerSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSerSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSerSearchActionPerformed
+
+    private void btnSerSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSerSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSerSearchActionPerformed
 
     private void setValuesToEntity() {
         
         var entity = conArt.getEntityDefault();
-        entity.setArticleCode(txtArtCode.getText().trim().toLowerCase());
-        entity.setProductName(txtArtName.getText());
+        entity.setArticleCode(txtArtCode.getText().trim().toLowerCase().toString());
+        entity.setProductName(txtArtName.getText().toString());
         
         try {
             entity.setPrice(new BigDecimal(txtArtPrice.getText()));
@@ -328,21 +551,36 @@ public class ArticlesForm extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnSerAdd;
+    private javax.swing.JButton btnSerDelete;
+    private javax.swing.JButton btnSerEdit;
+    private javax.swing.JButton btnSerSearch;
     private javax.swing.JPanel jArticlesPane;
+    private javax.swing.JPanel jArticlesPane1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel jServicesPanel;
     private javax.swing.JTabbedPane jTabbedPane;
     private javax.swing.JLabel lblTime;
-    private javax.swing.JList<Articles> lstArticles;
+    javax.swing.JList<Articles> lstArticles;
+    javax.swing.JList<Articles> lstServices;
+    private javax.swing.JLabel operatorName;
     private javax.swing.JTextField txtArtCode;
     private javax.swing.JTextField txtArtName;
     private javax.swing.JTextField txtArtPrice;
     private javax.swing.JTextField txtSearch;
+    private javax.swing.JTextField txtSerCode;
+    private javax.swing.JTextField txtSerName;
+    private javax.swing.JTextField txtSerPrice;
+    private javax.swing.JTextField txtSerSearch;
     // End of variables declaration//GEN-END:variables
 
     private class Time extends Thread {

@@ -21,7 +21,7 @@ import org.hibernate.Session;
  */
 public abstract class Controller<T> {
     
-    StringBuilder sb = new StringBuilder();
+    
     
     protected Validator validator;
     protected T EntityDefault;
@@ -50,21 +50,22 @@ public abstract class Controller<T> {
     }
     
     public T create() throws ExceptionServiceLog {
-//        control();
+        control();
         controlCreate();
         save();
         return this.EntityDefault;
     }
     public T update() throws ExceptionServiceLog {
         control();
-        session.beginTransaction();
-        session.update(this.EntityDefault);
-        session.getTransaction().commit();
         controlUpdate();
+//        session.beginTransaction();
+//        session.update(this.EntityDefault);
+//        session.getTransaction().commit();
         save();
         return this.EntityDefault;
     }
     public boolean delete() throws ExceptionServiceLog {
+        control();
         controlDelete();
         session.beginTransaction();
         session.delete(this.EntityDefault);
@@ -79,17 +80,16 @@ public abstract class Controller<T> {
     }
     
     public void control() throws ExceptionServiceLog {
-        
+        StringBuilder sb = new StringBuilder();
         Set<ConstraintViolation<T>> constraintViolations = validator.validate(this.EntityDefault);
         
-        if(constraintViolations.size()>0) {
-           for (ConstraintViolation<T> violation : constraintViolations) {
-               sb.append(violation.getMessage());
-               sb.append(", ");
-           }
-        } else {
-            throw new ExceptionServiceLog("Not set!");
-        }
+        if(constraintViolations.size()>0){
+             for (ConstraintViolation<T> violation : constraintViolations) {  
+             sb.append(violation.getMessage());
+             sb.append(", ");
+            }
+             throw new ExceptionServiceLog(sb.toString());
+         }
     }
     
     public T getEntityDefault() {

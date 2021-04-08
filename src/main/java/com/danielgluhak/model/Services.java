@@ -15,20 +15,5 @@ import javax.persistence.Entity;
 @Entity
 public class Services extends ArticlesAndServices {
 
-    public Services() {
-    }
-
-    public Services(String productName, BigDecimal price) {
-        super(productName, price);
-    }
-    private float workingHours;
-
-    public float getWorkingHours() {
-        return workingHours;
-    }
-
-    public void setWorkingHours(float workingHours) {
-        this.workingHours = workingHours;
-    }
     
 }

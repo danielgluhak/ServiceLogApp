@@ -40,7 +40,7 @@ public class Authorization extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         lgnButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel1.setBackground(new java.awt.Color(204, 255, 204));

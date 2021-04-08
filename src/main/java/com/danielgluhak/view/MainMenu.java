@@ -51,9 +51,9 @@ public class MainMenu extends javax.swing.JFrame {
 
         btnArticlesServices.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnArticlesServices.setText("Articles and services");
-        btnArticlesServices.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                btnArticlesServicesMouseReleased(evt);
+        btnArticlesServices.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArticlesServicesActionPerformed(evt);
             }
         });
 
@@ -65,6 +65,11 @@ public class MainMenu extends javax.swing.JFrame {
         btnCustomers.setText("Customers");
 
         btnHelp.setText("Help");
+        btnHelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHelpActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,6 +122,14 @@ public class MainMenu extends javax.swing.JFrame {
     private void btnArticlesServicesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnArticlesServicesMouseReleased
         new ArticlesForm().setVisible(true);
     }//GEN-LAST:event_btnArticlesServicesMouseReleased
+
+    private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
+        new HelpForm().setVisible(true);
+    }//GEN-LAST:event_btnHelpActionPerformed
+
+    private void btnArticlesServicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArticlesServicesActionPerformed
+        new ArticlesForm().setVisible(true);
+    }//GEN-LAST:event_btnArticlesServicesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
