@@ -65,7 +65,7 @@ public abstract class Controller<T> {
         return this.EntityDefault;
     }
     public boolean delete() throws ExceptionServiceLog {
-        control();
+//        control();
         controlDelete();
         session.beginTransaction();
         session.delete(this.EntityDefault);

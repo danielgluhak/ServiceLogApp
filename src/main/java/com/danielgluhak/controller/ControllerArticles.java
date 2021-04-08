@@ -46,7 +46,7 @@ public class ControllerArticles extends Controller<Articles> {
     protected void nameSet()throws ExceptionServiceLog {
         if(EntityDefault.getProductName().isBlank() || 
             EntityDefault.getProductName().isEmpty()){
-            throw new ExceptionServiceLog("Please enter product code.");
+            throw new ExceptionServiceLog("Please enter product name.");
         }
     }
     protected void length()throws ExceptionServiceLog {
