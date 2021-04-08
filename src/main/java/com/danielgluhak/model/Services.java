@@ -5,7 +5,6 @@
  */
 package com.danielgluhak.model;
 
-import java.math.BigDecimal;
 import javax.persistence.Entity;
 
 /**

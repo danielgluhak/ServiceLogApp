@@ -39,7 +39,7 @@ public class MainMenu extends javax.swing.JFrame {
         lblTime = new javax.swing.JLabel();
         btnHelp = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnServiceLogs.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnServiceLogs.setText("Service logs");
@@ -120,7 +120,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnServiceLogsMouseReleased
 
     private void btnArticlesServicesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnArticlesServicesMouseReleased
-        new ArticlesForm().setVisible(true);
+        new ArticlesAndServicesForm().setVisible(true);
     }//GEN-LAST:event_btnArticlesServicesMouseReleased
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
@@ -128,7 +128,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHelpActionPerformed
 
     private void btnArticlesServicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArticlesServicesActionPerformed
-        new ArticlesForm().setVisible(true);
+        new ArticlesAndServicesForm().setVisible(true);
     }//GEN-LAST:event_btnArticlesServicesActionPerformed
 
 

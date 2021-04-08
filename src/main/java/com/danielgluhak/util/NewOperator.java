@@ -22,12 +22,11 @@ public class NewOperator {
         o1.setPassword(BCrypt.hashpw("default012", BCrypt.gensalt()));
 //        o1.setUserName(o1.getFirstName().substring(0, 1).trim().toLowerCase()
 //                        + o1.getLastName().trim().toLowerCase());
-        o1.setUserName("dgluhak");
         
-       
         
         ControllerOperator co = new ControllerOperator();
         co.setEntityDefault(o1);
+       
         
         try {
             co.create();
