@@ -2,9 +2,7 @@
 package com.danielgluhak.view;
 
 import com.danielgluhak.controller.ControllerArticles;
-import com.danielgluhak.controller.ControllerServices;
 import com.danielgluhak.model.Articles;
-import com.danielgluhak.model.Services;
 import com.danielgluhak.model.Operator;
 import com.danielgluhak.util.ExceptionServiceLog;
 import com.danielgluhak.util.NewOperator;
@@ -18,12 +16,12 @@ import javax.swing.JOptionPane;
 public class ArticlesAndServicesForm extends javax.swing.JFrame {
 
     private ControllerArticles conArt;
-    private ControllerServices conServ;
+    
     
     public ArticlesAndServicesForm() {
         initComponents();
         conArt = new ControllerArticles();
-        conServ = new ControllerServices();
+        
         load();
         setTitle(Application.APP_NAME);
         new ArticlesAndServicesForm.Time().start();
@@ -57,21 +55,6 @@ public class ArticlesAndServicesForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jServicesPanel = new javax.swing.JPanel();
-        jArticlesPane1 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        lstServices = new javax.swing.JList<>();
-        jLabel4 = new javax.swing.JLabel();
-        txtSerName = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        btnSerAdd = new javax.swing.JButton();
-        btnSerEdit = new javax.swing.JButton();
-        btnSerDelete = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        txtSerCode = new javax.swing.JTextField();
-        txtSerSearch = new javax.swing.JTextField();
-        btnSerSearch = new javax.swing.JButton();
-        txtSerPrice = new javax.swing.JTextField();
         operatorName = new javax.swing.JLabel();
 
         jInternalFrame1.setVisible(true);
@@ -252,161 +235,6 @@ public class ArticlesAndServicesForm extends javax.swing.JFrame {
 
         jTabbedPane.addTab("Articles", jArticlesPane);
 
-        lstServices.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                lstServicesValueChanged(evt);
-            }
-        });
-        jScrollPane2.setViewportView(lstServices);
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setText("Service name:");
-
-        txtSerName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSerNameActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel7.setText("Service price: ");
-
-        btnSerAdd.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnSerAdd.setText("Add");
-        btnSerAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSerAddActionPerformed(evt);
-            }
-        });
-
-        btnSerEdit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnSerEdit.setText("Edit");
-        btnSerEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSerEditActionPerformed(evt);
-            }
-        });
-
-        btnSerDelete.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnSerDelete.setText("Delete");
-        btnSerDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSerDeleteActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel8.setText("Service code:");
-
-        txtSerCode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSerCodeActionPerformed(evt);
-            }
-        });
-
-        txtSerSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtSerSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSerSearchActionPerformed(evt);
-            }
-        });
-
-        btnSerSearch.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnSerSearch.setText("Search");
-        btnSerSearch.setPreferredSize(new java.awt.Dimension(55, 23));
-        btnSerSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSerSearchActionPerformed(evt);
-            }
-        });
-
-        txtSerPrice.setText("1234,55");
-
-        javax.swing.GroupLayout jArticlesPane1Layout = new javax.swing.GroupLayout(jArticlesPane1);
-        jArticlesPane1.setLayout(jArticlesPane1Layout);
-        jArticlesPane1Layout.setHorizontalGroup(
-            jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jArticlesPane1Layout.createSequentialGroup()
-                .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jArticlesPane1Layout.createSequentialGroup()
-                        .addContainerGap(83, Short.MAX_VALUE)
-                        .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jArticlesPane1Layout.createSequentialGroup()
-                                .addComponent(btnSerEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnSerDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jArticlesPane1Layout.createSequentialGroup()
-                                    .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtSerName, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel4)
-                                        .addComponent(btnSerAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtSerCode, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel8))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel7)
-                                        .addComponent(txtSerPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(jArticlesPane1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtSerSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSerSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(81, Short.MAX_VALUE))
-        );
-        jArticlesPane1Layout.setVerticalGroup(
-            jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jArticlesPane1Layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
-                .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtSerSearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSerSearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSerPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSerCode, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSerName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jArticlesPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSerAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSerEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSerDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14))
-        );
-
-        javax.swing.GroupLayout jServicesPanelLayout = new javax.swing.GroupLayout(jServicesPanel);
-        jServicesPanel.setLayout(jServicesPanelLayout);
-        jServicesPanelLayout.setHorizontalGroup(
-            jServicesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 785, Short.MAX_VALUE)
-            .addGroup(jServicesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jServicesPanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jArticlesPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        jServicesPanelLayout.setVerticalGroup(
-            jServicesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 432, Short.MAX_VALUE)
-            .addGroup(jServicesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jServicesPanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jArticlesPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        jTabbedPane.addTab("Services", jServicesPanel);
-
         getContentPane().add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 460));
         getContentPane().add(operatorName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 160, 30));
 
@@ -416,7 +244,7 @@ public class ArticlesAndServicesForm extends javax.swing.JFrame {
 
     private void jTabbedPaneMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPaneMousePressed
         load();
-        loadServ();
+       
     }//GEN-LAST:event_jTabbedPaneMousePressed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
@@ -521,107 +349,7 @@ public class ArticlesAndServicesForm extends javax.swing.JFrame {
             load();
         } 
     }//GEN-LAST:event_txtSearchActionPerformed
-
-    private void lstServicesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstServicesValueChanged
-        if(evt.getValueIsAdjusting()) {
-            return;
-        }
-        if(lstServices.getSelectedValue() == null) {
-            return;
-        }
-        
-        conServ.setEntityDefault(lstServices.getSelectedValue());
-
-        txtArtCode.setText(conArt.getEntityDefault().getArticleCode().toString());
-        txtArtName.setText(conArt.getEntityDefault().getProductName().toString());
-        try {
-            txtArtPrice.setText(conArt.getEntityDefault().getPrice().toString());
-        } catch (Exception e) {
-            txtArtPrice.setText("");
-        }
-    }//GEN-LAST:event_lstServicesValueChanged
-
-    private void txtSerNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSerNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSerNameActionPerformed
-
-    private void btnSerAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSerAddActionPerformed
-        conServ.setEntityDefault(new Services());
-//        setValuesToEntity();
-        if(txtSerName.getText().isEmpty() || txtSerName.getText().isBlank()) {
-            JOptionPane.showMessageDialog(rootPane, "Please enter a name of service.");
-            return;
-        } else if(txtSerCode.getText().isEmpty() || txtSerCode.getText().isBlank()) {
-            JOptionPane.showMessageDialog(rootPane, "Please enter a service code.");
-        } else {
-            setValuesToEntityServ();
-        }
-        
-        try {
-            conServ.create();
-            cleanUpServ();
-            loadServ();
-        } catch (ExceptionServiceLog e) {
-            JOptionPane.showMessageDialog(rootPane, e.getMessage());
-        }
-    }//GEN-LAST:event_btnSerAddActionPerformed
-
-    private void btnSerEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSerEditActionPerformed
-      if(conServ.getEntityDefault()==null || 
-                conServ.getEntityDefault().getId()==null) {
-            JOptionPane.showMessageDialog(rootPane, "Please choose the item to edit.");
-            return;
-        } else {
-            setValuesToEntityServ();
-        }
-        try {
-            conServ.update();
-            cleanUpServ();
-            loadServ();
-        } catch (ExceptionServiceLog e) {
-            JOptionPane.showMessageDialog(rootPane, e.getMessage());
-        }
-        
-    }//GEN-LAST:event_btnSerEditActionPerformed
     
-    private void btnSerDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSerDeleteActionPerformed
-        if(conServ.getEntityDefault()==null || conServ.getEntityDefault().getId()==null) {
-            JOptionPane.showMessageDialog(rootPane, "Please choose the item to delete.");
-            return;
-        }
-        try {
-            conServ.delete();
-            cleanUpServ();
-            loadServ();
-        } catch (ExceptionServiceLog e) {
-            JOptionPane.showMessageDialog(rootPane, e.getMessage());
-        }
-    }//GEN-LAST:event_btnSerDeleteActionPerformed
-
-    private void txtSerCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSerCodeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSerCodeActionPerformed
-
-    private void txtSerSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSerSearchActionPerformed
-        if(txtSerSearch.getText().isEmpty() || txtSerSearch.getText().isBlank()) {
-            cleanUpServ();
-            loadServ();
-        } 
-    }//GEN-LAST:event_txtSerSearchActionPerformed
-
-    private void btnSerSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSerSearchActionPerformed
-        DefaultListModel<Services> serv = new DefaultListModel<>();
-        if(!txtSerSearch.getText().isBlank() || !txtSerSearch.getText().isEmpty()) {
-          serv.addAll(conServ.getData(txtSerSearch.getText()));
-            lstServices.setModel(serv);  
-            cleanUp();
-            
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "At least one character must be entered to perform search.");
-            load();
-        }
-    }//GEN-LAST:event_btnSerSearchActionPerformed
-
     private void setValuesToEntity() {
         
         var entity = conArt.getEntityDefault();
@@ -634,77 +362,43 @@ public class ArticlesAndServicesForm extends javax.swing.JFrame {
             entity.setPrice(BigDecimal.ZERO);
         }        
     }
-    private void setValuesToEntityServ() {
-        
-        var entity = conServ.getEntityDefault();
-        entity.setArticleCode(txtSerCode.getText().trim().toLowerCase().toString());
-        entity.setProductName(txtSerName.getText().toString());
-        try {
-            entity.setPrice(new BigDecimal(txtArtPrice.getText()));
-        } catch (Exception e) {
-            entity.setPrice(BigDecimal.ZERO);
-        }        
-    }
-   
+    
     private void load() {
         DefaultListModel<Articles> art = new DefaultListModel<>();
         art.addAll(conArt.getData());
         lstArticles.setModel(art);
     }
-    private void loadServ() {
-        DefaultListModel<Services> serv = new DefaultListModel<>();
-        serv.addAll(conServ.getData());
-        lstServices.setModel(serv);
-    }
+   
     private void cleanUp() {
         txtArtCode.setText("");
         txtArtName.setText("");
         txtArtPrice.setText("");
     }
-    private void cleanUpServ() {
-        txtSerCode.setText("");
-        txtSerName.setText("");
-        txtSerPrice.setText("");
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnSearch;
-    private javax.swing.JButton btnSerAdd;
-    private javax.swing.JButton btnSerDelete;
-    private javax.swing.JButton btnSerEdit;
-    private javax.swing.JButton btnSerSearch;
     private javax.swing.JPanel jArticlesPane;
-    private javax.swing.JPanel jArticlesPane1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JPanel jServicesPanel;
     private javax.swing.JTabbedPane jTabbedPane;
     private javax.swing.JLabel lblTime;
     javax.swing.JList<Articles> lstArticles;
-    javax.swing.JList<Services> lstServices;
     private javax.swing.JLabel operatorName;
     private javax.swing.JTextField txtArtCode;
     private javax.swing.JTextField txtArtName;
     private javax.swing.JTextField txtArtPrice;
     private javax.swing.JTextField txtSearch;
-    private javax.swing.JTextField txtSerCode;
-    private javax.swing.JTextField txtSerName;
-    private javax.swing.JTextField txtSerPrice;
-    private javax.swing.JTextField txtSerSearch;
     // End of variables declaration//GEN-END:variables
 
     private class Time extends Thread {

@@ -25,8 +25,6 @@ public class ServiceOrder extends EntityDefault{
     private List<Vehicle> vehicle = new ArrayList<>();
     @ManyToMany
     private List<Articles> articles = new ArrayList<>();
-    @ManyToMany
-    private List<Services> services = new ArrayList<>();
     private Date recievingDate;
     private String remarks;
 
@@ -46,13 +44,7 @@ public class ServiceOrder extends EntityDefault{
         this.articles = articles;
     }
 
-    public List<Services> getServices() {
-        return services;
-    }
-
-    public void setServices(List<Services> services) {
-        this.services = services;
-    }
+   
 
     public Date getRecievingDate() {
         return recievingDate;
@@ -70,6 +62,7 @@ public class ServiceOrder extends EntityDefault{
         this.remarks = remarks;
     }
     
+   
     
     
 
