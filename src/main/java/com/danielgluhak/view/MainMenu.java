@@ -116,7 +116,7 @@ public class MainMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnServiceLogsMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnServiceLogsMouseReleased
-        new ServiceLogsForm().setVisible(true);
+        new ServiceOrderForm().setVisible(true);
     }//GEN-LAST:event_btnServiceLogsMouseReleased
 
     private void btnArticlesServicesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnArticlesServicesMouseReleased

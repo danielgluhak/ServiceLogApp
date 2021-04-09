@@ -52,15 +52,15 @@ public class ControllerCustomer extends Controller<Customer> {
     }
     
     private void controlNameSet() throws ExceptionServiceLog{
-        if(EntityDefault.getName()==null 
-               || EntityDefault.getName().isEmpty()){
-           throw new ExceptionServiceLog("Name must be set");
+        if(EntityDefault.getFirstName().isBlank()
+               || EntityDefault.getFirstName().isEmpty()){
+           throw new ExceptionServiceLog("First name must be set");
        }
     }
 
     private void controlNameLength()throws ExceptionServiceLog {
-        if(EntityDefault.getName() == null || EntityDefault.getName().length()>50 || EntityDefault.getName().length()<2){
-            throw new ExceptionServiceLog("Name length must be between 2 and 50 letters.");
+        if(EntityDefault.getFirstName() == null || EntityDefault.getFirstName().length()>50 || EntityDefault.getFirstName().length()<2){
+            throw new ExceptionServiceLog("First name length must be between 2 and 50 letters.");
         }
     }
      private void controlLastNameSet() throws ExceptionServiceLog{

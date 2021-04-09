@@ -19,7 +19,9 @@ public class NewOperator {
         Operator o1 = new Operator();
         o1.setFirstName("Daniel");
         o1.setLastName("Gluhak");
+        o1.setUserName("dgluhak");
         o1.setPassword(BCrypt.hashpw("default012", BCrypt.gensalt()));
+        
 //        o1.setUserName(o1.getFirstName().substring(0, 1).trim().toLowerCase()
 //                        + o1.getLastName().trim().toLowerCase());
         
