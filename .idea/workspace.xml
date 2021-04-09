@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c3a22017-8143-4019-9061-72087dc25d79" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danielgluhak/controller/ControllerCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danielgluhak/controller/ControllerCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danielgluhak/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danielgluhak/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danielgluhak/util/NewOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danielgluhak/util/NewOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danielgluhak/view/ArticlesForm.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danielgluhak/view/ArticlesForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/danielgluhak/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/controller/ControllerArticles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/danielgluhak/controller/ControllerArticles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/controller/ControllerServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/danielgluhak/controller/ControllerServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/model/ArticlesAndServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/danielgluhak/model/ArticlesAndServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/model/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/danielgluhak/model/Services.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/util/NewOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/danielgluhak/util/NewOperator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$13.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$14.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$15.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$16.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$17.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm$Time.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/ArticlesForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/danielgluhak/view/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1qwPTTIrGmHcL3LH6vTVVhlakc6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c3a22017-8143-4019-9061-72087dc25d79" name="Default Changelist" comment="" />
+      <created>1617987691410</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617987691410</updated>
+    </task>
+    <servers />
+  </component>
+</project>
