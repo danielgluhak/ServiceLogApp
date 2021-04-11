@@ -55,7 +55,7 @@ public abstract class ArticlesAndServices extends EntityDefault {
     @Override
     public String toString() {
 //          return String.format("%15f"+getArticleCode()+getProductName()+getPrice());
-        return String.format("%-25s %25s %40s",getArticleCode().trim().toLowerCase(), getProductName(), getPrice());
+        return String.format(getArticleCode().trim().toLowerCase()+ " | " + getProductName() + " | " + getPrice() + " €");
     }
     
     
