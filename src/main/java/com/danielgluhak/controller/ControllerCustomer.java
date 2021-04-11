@@ -51,6 +51,9 @@ public class ControllerCustomer extends Controller<Customer> {
        controlLastNameLength();
     }
     
+    private void controlVehicleSet() throws ExceptionServiceLog {
+        if(EntityDefault.getVehicles()==null) throw new ExceptionServiceLog("Choose a vehicle.");
+}
     private void controlNameSet() throws ExceptionServiceLog{
         if(EntityDefault.getFirstName().isBlank()
                || EntityDefault.getFirstName().isEmpty()){

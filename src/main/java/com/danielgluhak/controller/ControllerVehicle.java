@@ -36,7 +36,6 @@ public class ControllerVehicle extends Controller<Vehicle> {
 
     @Override
     protected void controlCreate() throws ExceptionServiceLog {
-        controlCustomerSet();
         controlManufacturerSet();
         controlModelSet();
         controlYearSet();
@@ -52,9 +51,6 @@ public class ControllerVehicle extends Controller<Vehicle> {
         
     }
     
-    private void controlCustomerSet() throws ExceptionServiceLog {
-        if(EntityDefault.getCustomer()==null) throw new ExceptionServiceLog("Customer must be set.");
-}
     private void controlManufacturerSet() throws ExceptionServiceLog {
         if(EntityDefault.getManufacturer().isEmpty() || EntityDefault.getManufacturer()==null) {
             throw new ExceptionServiceLog("Manufacturer name must be set.");
@@ -66,8 +62,8 @@ public class ControllerVehicle extends Controller<Vehicle> {
         }
     }
     private void controlYearSet() throws ExceptionServiceLog {
-        if(EntityDefault.getProductionYear()<1970 || EntityDefault.getProductionYear()>2021) {
-            throw new ExceptionServiceLog("Production year between 1970 and 2021 must be set.");
+        if(EntityDefault.getProductionYear().isBlank() || EntityDefault.getProductionYear().isEmpty()) {
+            throw new ExceptionServiceLog("Production year must be set.");
         }
     }
     
