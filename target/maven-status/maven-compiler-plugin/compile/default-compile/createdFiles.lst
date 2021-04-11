@@ -1,4 +1,5 @@
 com\danielgluhak\view\MainMenu.class
+com\danielgluhak\view\ServiceOrderForm$11.class
 com\danielgluhak\view\ServiceOrderForm.class
 com\danielgluhak\view\ArticlesAndServicesForm$5.class
 com\danielgluhak\view\Authorization$6.class
@@ -18,10 +19,12 @@ com\danielgluhak\view\MainMenu$3.class
 com\danielgluhak\view\SplashScreen.class
 com\danielgluhak\view\ServiceOrderForm$5.class
 com\danielgluhak\view\CustomerForm.class
+com\danielgluhak\view\ServiceOrderForm$10.class
 com\danielgluhak\view\ServiceOrderForm$9.class
 com\danielgluhak\view\ArticlesAndServicesForm$2.class
 com\danielgluhak\controller\Controller.class
 com\danielgluhak\view\ArticlesAndServicesForm$8.class
+com\danielgluhak\controller\ControllerAddedItems.class
 com\danielgluhak\view\ArticlesAndServicesForm.class
 com\danielgluhak\view\ArticlesAndServicesForm$Time.class
 com\danielgluhak\view\Authorization$3.class
@@ -45,6 +48,7 @@ com\danielgluhak\view\SplshScreen$1.class
 com\danielgluhak\model\ServiceOrder.class
 com\danielgluhak\controller\ControllerArticles.class
 com\danielgluhak\util\HibernateUtil.class
+com\danielgluhak\model\AddedItems.class
 com\danielgluhak\view\ArticlesAndServicesForm$4.class
 com\danielgluhak\view\SplshScreen.class
 com\danielgluhak\view\ServiceOrderForm$7.class

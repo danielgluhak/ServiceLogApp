@@ -43,6 +43,7 @@
         <mapping class="com.danielgluhak.model.Customer"/> 
         <mapping class="com.danielgluhak.model.Vehicle"/> 
         <mapping class="com.danielgluhak.model.Articles"/> 
+        <mapping class="com.danielgluhak.model.AddedItems"/> 
         <mapping class="com.danielgluhak.model.ServiceOrder"/> 
         
      
