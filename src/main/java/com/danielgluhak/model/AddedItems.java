@@ -5,13 +5,15 @@
  */
 package com.danielgluhak.model;
 
+import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 /**
  *
  * @author Daniel
  */
-public class AddedItems {
+@Entity
+public class AddedItems extends EntityDefault {
     
     @ManyToOne
     private ServiceOrder serviceOrder;
@@ -36,6 +38,6 @@ public class AddedItems {
     
     @Override
     public String toString() {
-        return getArticles().toString();
+        return String.format(articles.getArticleCode() + " | " + articles.getProductName() + " | " + articles.getPrice());
     }
 }
