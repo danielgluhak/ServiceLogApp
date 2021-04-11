@@ -8,6 +8,7 @@ package com.danielgluhak.model;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -24,8 +25,8 @@ public class ServiceOrder extends EntityDefault{
     @ManyToOne
     private Vehicle vehicle;
 //    private List<Vehicle> vehicle = new ArrayList<>();
-    @ManyToMany
-    private List<Articles> articles = new ArrayList<>();
+    @ManyToMany (cascade = CascadeType.ALL)
+    private List<AddedItems> item = new ArrayList<>();
     private Date recievingDate;
     private String remarks;
    
@@ -45,12 +46,12 @@ public class ServiceOrder extends EntityDefault{
         this.vehicle = vehicle;
     }
     
-    public List<Articles> getArticles() {
-        return articles;
+    public List<AddedItems> getItem() {
+        return item;
     }
 
-    public void setArticles(List<Articles> articles) {
-        this.articles = articles;
+    public void setItem(List<AddedItems> item) {
+        this.item = item;
     }
 
     public Date getRecievingDate() {
