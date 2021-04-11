@@ -45,6 +45,7 @@ com\danielgluhak\view\CustomerForm$1.class
 com\danielgluhak\model\EntityDefault.class
 com\danielgluhak\view\Authorization$4.class
 com\danielgluhak\view\SplshScreen$1.class
+com\danielgluhak\view\ServiceOrderForm$12.class
 com\danielgluhak\model\ServiceOrder.class
 com\danielgluhak\controller\ControllerArticles.class
 com\danielgluhak\util\HibernateUtil.class
