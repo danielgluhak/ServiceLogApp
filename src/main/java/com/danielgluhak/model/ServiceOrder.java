@@ -20,22 +20,31 @@ import javax.persistence.OneToMany;
  */
 @Entity
 public class ServiceOrder extends EntityDefault{
-    
-    @ManyToMany
-    private List<Vehicle> vehicle = new ArrayList<>();
+
+    @ManyToOne
+    private Vehicle vehicle;
+//    private List<Vehicle> vehicle = new ArrayList<>();
     @ManyToMany
     private List<Articles> articles = new ArrayList<>();
     private Date recievingDate;
     private String remarks;
+   
+//    public List<Vehicle> getVehicle() {
+//        return vehicle;
+//    }
+//
+//    public void setVehicle(List<Vehicle> vehicle) {
+//        this.vehicle = vehicle;
+//    }
 
-    public List<Vehicle> getVehicle() {
+    public Vehicle getVehicle() {
         return vehicle;
     }
 
-    public void setVehicle(List<Vehicle> vehicle) {
+    public void setVehicle(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
-
+    
     public List<Articles> getArticles() {
         return articles;
     }
@@ -43,8 +52,6 @@ public class ServiceOrder extends EntityDefault{
     public void setArticles(List<Articles> articles) {
         this.articles = articles;
     }
-
-   
 
     public Date getRecievingDate() {
         return recievingDate;
@@ -62,7 +69,10 @@ public class ServiceOrder extends EntityDefault{
         this.remarks = remarks;
     }
     
-   
+   @Override
+    public String toString() {
+        return getId().toString();
+    }
     
     
 
