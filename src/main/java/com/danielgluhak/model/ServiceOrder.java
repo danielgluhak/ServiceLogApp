@@ -21,7 +21,9 @@ import javax.persistence.OneToMany;
  */
 @Entity
 public class ServiceOrder extends EntityDefault{
-
+    
+    @ManyToOne
+    private Customer customer;
     @ManyToOne
     private Vehicle vehicle;
 //    private List<Vehicle> vehicle = new ArrayList<>();
@@ -29,14 +31,16 @@ public class ServiceOrder extends EntityDefault{
     private List<AddedItems> item = new ArrayList<>();
     private Date recievingDate;
     private String remarks;
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
    
-//    public List<Vehicle> getVehicle() {
-//        return vehicle;
-//    }
-//
-//    public void setVehicle(List<Vehicle> vehicle) {
-//        this.vehicle = vehicle;
-//    }
+    
 
     public Vehicle getVehicle() {
         return vehicle;
