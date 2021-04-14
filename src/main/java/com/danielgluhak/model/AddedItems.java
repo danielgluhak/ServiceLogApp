@@ -5,6 +5,7 @@
  */
 package com.danielgluhak.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
@@ -19,6 +20,15 @@ public class AddedItems extends EntityDefault {
     private ServiceOrder serviceOrder;
     @ManyToOne
     private Articles articles;
+
+    public AddedItems(ServiceOrder serviceOrder, Articles articles) {
+        this.serviceOrder = serviceOrder;
+        this.articles = articles;
+    }
+
+    public AddedItems() {
+        
+    }
 
     public ServiceOrder getServiceOrder() {
         return serviceOrder;

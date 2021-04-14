@@ -5,6 +5,7 @@
  */
 package com.danielgluhak.model;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,6 +14,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import org.hibernate.annotations.Cascade;
 
 
 /**
@@ -27,10 +29,25 @@ public class ServiceOrder extends EntityDefault{
     @ManyToOne
     private Vehicle vehicle;
 //    private List<Vehicle> vehicle = new ArrayList<>();
-    @ManyToMany (cascade = CascadeType.ALL)
+//      
+    @ManyToMany (cascade=CascadeType.ALL)
     private List<AddedItems> item = new ArrayList<>();
     private Date recievingDate;
     private String remarks;
+    private String nameId;
+
+    public String getNameId() {
+        return getId().toString();
+    }
+
+    public void setNameId(String nameId) {
+        this.nameId = nameId;
+    }
+    
+    
+   
+    
+    
 
     public Customer getCustomer() {
         return customer;
@@ -77,6 +94,7 @@ public class ServiceOrder extends EntityDefault{
    @Override
     public String toString() {
         return getId().toString();
+        
     }
     
     
