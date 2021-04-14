@@ -7,6 +7,7 @@ com\danielgluhak\model\ArticlesAndServices.class
 com\danielgluhak\controller\ControllerServiceOrder.class
 com\danielgluhak\view\ArticlesAndServicesForm$1.class
 com\danielgluhak\view\MainMenu$1.class
+com\danielgluhak\view\ServiceOrderForm$14.class
 com\danielgluhak\view\ServiceOrderForm$3.class
 com\danielgluhak\view\ArticlesAndServicesForm$9.class
 com\danielgluhak\util\ExceptionServiceLog.class
