@@ -1,6 +1,7 @@
 
 package com.danielgluhak.view;
 
+import com.danielgluhak.model.Vehicle;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -60,9 +61,19 @@ public class MainMenu extends javax.swing.JFrame {
         btnVehicles.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         btnVehicles.setText("Vehicles");
         btnVehicles.setToolTipText("");
+        btnVehicles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVehiclesActionPerformed(evt);
+            }
+        });
 
         btnCustomers.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         btnCustomers.setText("Customers");
+        btnCustomers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCustomersActionPerformed(evt);
+            }
+        });
 
         btnHelp.setText("Help");
         btnHelp.addActionListener(new java.awt.event.ActionListener() {
@@ -130,6 +141,14 @@ public class MainMenu extends javax.swing.JFrame {
     private void btnArticlesServicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArticlesServicesActionPerformed
         new ArticlesAndServicesForm().setVisible(true);
     }//GEN-LAST:event_btnArticlesServicesActionPerformed
+
+    private void btnVehiclesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehiclesActionPerformed
+        new VehicleForm().setVisible(true);
+    }//GEN-LAST:event_btnVehiclesActionPerformed
+
+    private void btnCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomersActionPerformed
+        new CustomerForm().setVisible(true);
+    }//GEN-LAST:event_btnCustomersActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
