@@ -60,7 +60,7 @@ public class Customer extends EntityDefault{
     @Override
     public String toString() {
 //          return String.format("%15f"+getArticleCode()+getProductName()+getPrice());
-        return String.format("%5s %5s",getFirstName(), getLastName());
+        return String.format("#" + getId() + " " + getFirstName() + " " + getLastName());
     }
     
 }
