@@ -8,6 +8,7 @@ package com.danielgluhak.controller;
 import com.danielgluhak.model.Customer;
 import com.danielgluhak.model.Vehicle;
 import com.danielgluhak.util.ExceptionServiceLog;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -32,6 +33,13 @@ public class ControllerVehicle extends Controller<Vehicle> {
     @Override
     public List<Vehicle> getData() {
         return session.createQuery("from Vehicle").list();
+    }
+    public List<Vehicle> getData(String condition) {
+        return session.createQuery("from Vehicle v "
+                + " where concat(v.manufacturer, ' ', v.model, ' ', v.licensePlate, ' ', v.productionYear) "
+                + " like :condition order by v.manufacturer, v.model, v.licensePlate, v.productionYear")
+                .setParameter("condition", "%" + condition + "%")
+                .list();
     }
 
     @Override
@@ -66,5 +74,6 @@ public class ControllerVehicle extends Controller<Vehicle> {
             throw new ExceptionServiceLog("Production year must be set.");
         }
     }
+
     
 }

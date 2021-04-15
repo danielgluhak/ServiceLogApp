@@ -28,6 +28,13 @@ public class ControllerCustomer extends Controller<Customer> {
         //https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html
        return session.createQuery("from Customer").list();
     }
+    public List<Customer> getData(String condition) {
+        return session.createQuery("from Customer c "
+                + " where concat(c.firstName, ' ', c.lastName, ' ', c.contact) "
+                + " like :condition order by c.firstName, c.lastName, c.contact")
+                .setParameter("condition", "%" + condition + "%")
+                .list();
+    }
 
     @Override
     protected void controlCreate() throws ExceptionServiceLog {
