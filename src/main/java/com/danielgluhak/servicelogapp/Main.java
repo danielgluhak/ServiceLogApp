@@ -7,6 +7,7 @@ package com.danielgluhak.servicelogapp;
 
 import com.danielgluhak.util.InitFixtures;
 import com.danielgluhak.util.NewOperator;
+//import com.danielgluhak.view.SplashScreen;
 import com.danielgluhak.view.SplashScreen;
 
 /**
