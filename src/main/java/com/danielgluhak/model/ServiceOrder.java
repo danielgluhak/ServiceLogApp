@@ -31,10 +31,25 @@ public class ServiceOrder extends EntityDefault{
 //    private List<Vehicle> vehicle = new ArrayList<>();
 //      
     @ManyToMany (cascade=CascadeType.ALL)
-    private List<AddedItems> item = new ArrayList<>();
+    private List<AddedItems> items = new ArrayList<>();
     private Date recievingDate;
     private String remarks;
     private String nameId;
+    
+    public BigDecimal getTotalPrice() {
+        
+        BigDecimal sum = BigDecimal.ZERO;
+        
+        for(AddedItems a : items) {
+            if(a.getArticles()==null) {
+                continue;
+            }
+            sum = sum.add(a.getArticles().getPrice());
+        }
+        
+        return sum;
+    }
+    
 
     public String getNameId() {
         return getId().toString();
@@ -43,11 +58,6 @@ public class ServiceOrder extends EntityDefault{
     public void setNameId(String nameId) {
         this.nameId = nameId;
     }
-    
-    
-   
-    
-    
 
     public Customer getCustomer() {
         return customer;
@@ -67,12 +77,12 @@ public class ServiceOrder extends EntityDefault{
         this.vehicle = vehicle;
     }
     
-    public List<AddedItems> getItem() {
-        return item;
+    public List<AddedItems> getItems() {
+        return items;
     }
 
-    public void setItem(List<AddedItems> item) {
-        this.item = item;
+    public void setItems(List<AddedItems> items) {
+        this.items = items;
     }
 
     public Date getRecievingDate() {
