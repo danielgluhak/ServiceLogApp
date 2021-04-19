@@ -67,15 +67,12 @@ com\danielgluhak\model\AddedItems.class
 com\danielgluhak\view\ArticlesAndServicesForm$4.class
 com\danielgluhak\view\VehicleForm$8.class
 com\danielgluhak\view\ServiceOrderForm$7.class
-com\danielgluhak\view\MainMenu$5.class
 com\danielgluhak\view\Authorization$2.class
 com\danielgluhak\view\CustomerForm$4.class
 com\danielgluhak\controller\ControllerCustomer.class
 com\danielgluhak\view\ArticlesAndServicesForm$6.class
 com\danielgluhak\controller\ControllerVehicle.class
 com\danielgluhak\view\Authorization$5.class
-com\danielgluhak\view\HelpForm$1.class
-com\danielgluhak\view\HelpForm.class
 com\danielgluhak\view\VehicleForm.class
 com\danielgluhak\view\ServiceOrderForm$4.class
 com\danielgluhak\model\Customer.class
