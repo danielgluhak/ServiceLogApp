@@ -8,19 +8,20 @@ package com.danielgluhak.view;
 import com.danielgluhak.controller.ControllerOperator;
 import com.danielgluhak.model.Operator;
 import java.awt.event.KeyEvent;
+import javax.swing.DefaultListModel;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Daniel
- */
+    
+
 public class Authorization extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Authorization
-     */
+        Operator op;
+        ControllerOperator co;
     public Authorization() {
         initComponents();
+        op = new Operator();
+        co = new ControllerOperator();
         setTitle(Application.APP_NAME);
     }
 
@@ -191,16 +192,21 @@ public class Authorization extends javax.swing.JFrame {
             return;
         }
         
+        
         ControllerOperator co = new ControllerOperator();
         Operator operator = co.authorize(lgnUsername.getText(), lgnPassword.getPassword());
         
-        if(operator == null) {
-            JOptionPane.showMessageDialog(rootPane, "Username and password does not match.");
+        if(operator == null ) {
+            errorProcessing(lgnPassword, "Wrong login data.");
             return;
-        }
+        } 
         
         Application.operator=operator;
         new MainMenu().setVisible(true);
         dispose();
+    }
+    private void errorProcessing(JComponent component, String message){
+        component.requestFocus();
+        JOptionPane.showMessageDialog(rootPane, message);
     }
 }

@@ -90,7 +90,7 @@ public class ArticlesAndServicesForm extends javax.swing.JFrame {
         jScrollPane1.setViewportView(lstArticles);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel2.setText("Article name:");
+        jLabel2.setText("Item name:");
 
         txtArtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,7 +99,7 @@ public class ArticlesAndServicesForm extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel3.setText("Article price: ");
+        jLabel3.setText("Item price: ");
 
         btnAdd.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAdd.setText("Add");
@@ -126,7 +126,7 @@ public class ArticlesAndServicesForm extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel6.setText("Article code:");
+        jLabel6.setText("Item code:");
 
         txtArtCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,7 +153,7 @@ public class ArticlesAndServicesForm extends javax.swing.JFrame {
         txtArtPrice.setToolTipText("");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setText("Article list");
+        jLabel4.setText("Item list");
 
         javax.swing.GroupLayout jArticlesPaneLayout = new javax.swing.GroupLayout(jArticlesPane);
         jArticlesPane.setLayout(jArticlesPaneLayout);
@@ -217,7 +217,7 @@ public class ArticlesAndServicesForm extends javax.swing.JFrame {
                 .addGap(14, 14, 14))
         );
 
-        jTabbedPane.addTab("Articles", jArticlesPane);
+        jTabbedPane.addTab("Articles and services", jArticlesPane);
 
         getContentPane().add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 460));
         getContentPane().add(operatorName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 160, 30));

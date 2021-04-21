@@ -28,7 +28,7 @@ public class ControllerOperator extends Controller<Operator>{
     public Operator authorize(String userName, char[] password) {
         
         Operator o = (Operator) session
-                .createQuery("from Operator o1 where o1.userName=:userName")
+                .createQuery("from Operator o where o.userName=:userName")
                 .setParameter("userName", userName)
                 .getSingleResult(); 
         if(o == null) {
